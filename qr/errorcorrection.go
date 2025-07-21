@@ -1,7 +1,7 @@
 package qr
 
 import (
-	"github.com/boombuler/barcode/utils"
+	"github.com/arhitov/barcode/utils"
 )
 
 type errorCorrection struct {

@@ -1,1 +1,1 @@
-module github.com/boombuler/barcode
+module barcode

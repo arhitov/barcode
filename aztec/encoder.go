@@ -4,8 +4,8 @@ package aztec
 import (
 	"fmt"
 
-	"github.com/boombuler/barcode"
-	"github.com/boombuler/barcode/utils"
+	"github.com/arhitov/barcode"
+	"github.com/arhitov/barcode/utils"
 )
 
 const (
