@@ -7,11 +7,12 @@ import (
 )
 
 // Encode returns a Datamatrix barcode for the given content and color scheme
-func EncodeWithColor(content string, color barcode.ColorScheme) (barcode.Barcode, error) {
-
-	fnc1 := byte(232)
+func EncodeWithColor(fnc1 []byte, content string, color barcode.ColorScheme) (barcode.Barcode, error) {
+	if len(fnc1) == 0 {
+		fnc1 = []byte{232}
+	}
 	data := append(
-		[]byte{fnc1},
+		fnc1,
 		//[]byte{0xE8},
 		encodeText(content)...,
 	)
@@ -37,8 +38,8 @@ func EncodeWithColor(content string, color barcode.ColorScheme) (barcode.Barcode
 }
 
 // Encode returns a Datamatrix barcode for the given content
-func Encode(content string) (barcode.Barcode, error) {
-	return EncodeWithColor(content, barcode.ColorScheme16)
+func Encode(fnc1 []byte, content string) (barcode.Barcode, error) {
+	return EncodeWithColor(fnc1, content, barcode.ColorScheme16)
 }
 
 func render(data []byte, size *dmCodeSize, color barcode.ColorScheme) *datamatrixCode {
