@@ -14,8 +14,6 @@ func MakeSVG(dm barcode.Barcode, cellSize int) (string, error) {
 	w := dm.Bounds().Dx()
 	h := dm.Bounds().Dy()
 
-	fmt.Printf("w: %d, h: %d\n", w, h)
-
 	// Масштаб 1:size — 1 модуль = size пиксель
 	img, err := barcode.Scale(dm, w, h)
 	if err != nil {
